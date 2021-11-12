@@ -1,30 +1,27 @@
 <template>
-  <header>
-    <Navbar />
-  </header>
+  <header></header>
   <main>
-    <router-view />
-  </main>
-  <footer>
-    <div class="bg-dark text-light text-center p-4">
-      Made with 💖 by CodeWorks
+    <div class="row">
+      <div class="col-2">
+        <Navbar />
+      </div>
     </div>
-  </footer>
+  </main>
+  <router-view />
 </template>
 
 <script>
-import { computed } from 'vue'
-import { AppState } from './AppState'
+import { computed } from "vue";
+import { AppState } from "./AppState";
 export default {
-  name: 'App',
+  name: "App",
   setup() {
     return {
-      appState: computed(() => AppState)
-    }
-  }
-}
+      appState: computed(() => AppState),
+    };
+  },
+};
 </script>
 <style lang="scss">
 @import "./assets/scss/main.scss";
-
 </style>
