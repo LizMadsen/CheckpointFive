@@ -1,22 +1,20 @@
 <template>
-  <center>
-    <div class="col-10 card">
-      <div class="card-body rounded elevation-2">
-        <!-- <p>
-          {{ posts.creator.picture }}
-        </p> -->
-        <!-- <p>
-          {{ posts.title }}
-        </p> -->
-        <!-- <p>
-          {{ posts.body }}
-        </p> -->
-        <!-- <p>
-          <img class="imgFit" :src="post.imgUrl" alt="post picture" />
-        </p> -->
-      </div>
-    </div>
-  </center>
+  <!-- <center> -->
+  <div>
+    <p>
+      {{ posts.creator.picture }}
+    </p>
+    <p>
+      {{ posts.title }}
+    </p>
+    <p>
+      {{ posts.body }}
+    </p>
+    <p>
+      <img class="imgFit" :src="post.imgUrl" alt="post picture" />
+    </p>
+  </div>
+  <!-- </center> -->
 </template>
 
 

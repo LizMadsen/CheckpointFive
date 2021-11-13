@@ -10,7 +10,7 @@ class PostsService {
   }
   async create(data){
     logger.log(data)
-    const res = await cpFive.post('api/posts', data)
+    const res = await cpFiveApi.post('api/posts', data)
     logger.log(res.data)
     AppState.posts = res.data
   }

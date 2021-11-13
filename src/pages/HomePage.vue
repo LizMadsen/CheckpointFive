@@ -1,9 +1,32 @@
 <template>
-  <center>
-    <div v-for="p in post" :key="p.id">
-      <Posts :posts="p" />
+  <div class="row m-0 d-flex">
+    <div class="col-3">
+      <center>
+        <Navbar />
+      </center>
     </div>
-  </center>
+    <div class="col-10 me-3" align="right">
+      <button
+        class="btn btn-primary text-light"
+        data-bs-toggle="modal"
+        data.bs.target="PostForm"
+      >
+        Create Post
+        <Modal id="PostForm">
+          <template #modal-title> GREETER</template>
+          <template #modal-body><PostForm /> </template>
+        </Modal>
+      </button>
+      <Search />
+      <div class="card col-10 mt-3 elevation-2">
+        <div class="card-body">
+          <!-- <div v-for="p in posts" :key="p.id">
+            <Posts :posts="p" />
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
