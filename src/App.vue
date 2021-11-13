@@ -1,9 +1,11 @@
 <template>
-  <header></header>
   <main>
-    <div class="row">
+    <div class="row m-0">
       <div class="col-2">
         <Navbar />
+      </div>
+      <div class="col-8 mt-5">
+        <Posts />
       </div>
     </div>
   </main>
@@ -22,6 +24,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./assets/scss/main.scss";
 </style>
