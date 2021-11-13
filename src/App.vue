@@ -1,13 +1,5 @@
 <template>
-  <main>
-    <!-- <center>
-      <div class="row m-0">
-        <div class="col-2">
-          <Navbar />
-        </div>
-      </div>
-    </center> -->
-  </main>
+  <main></main>
   <router-view />
 </template>
 

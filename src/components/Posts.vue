@@ -1,29 +1,39 @@
 <template>
-  <!-- <center> -->
-  <div>
-    <p>
-      {{ posts.creator.picture }}
-    </p>
-    <p>
-      {{ posts.title }}
-    </p>
-    <p>
-      {{ posts.body }}
-    </p>
-    <p>
-      <img class="imgFit" :src="post.imgUrl" alt="post picture" />
-    </p>
+  <div class="card elevation-2 my-3">
+    <div class="card-body">
+      <p>
+        <img
+          class="profilePic"
+          :src="post.creator.picture"
+          alt="post picture"
+          align="left"
+        />
+      </p>
+      <p>
+        {{ post.body }}
+      </p>
+      <p>
+        <img class="imgFit" :src="post.imgUrl" alt="post picture" />
+      </p>
+    </div>
   </div>
-  <!-- </center> -->
 </template>
 
 
 <script>
 import { logger } from "../utils/Logger";
 import Pop from "../utils/Pop";
+import { AppState } from "../AppState";
 export default {
   name: "Home",
   props: { post: { type: Object, required: true } },
+
+  // computed: {
+  //   hasImg() {
+  //     return post.HasOwnProperty("imgUrl");
+  //   },
+  // },
+
   setup() {
     return {
       async getAll() {
@@ -41,7 +51,12 @@ export default {
 
 
 <style lang="scss" scoped>
-// .imgFit {
-//   height: cover;
-// }
+.profilePic {
+  border-radius: 50%;
+  height: 4rem;
+}
+
+.imgFit {
+  width: 25rem;
+}
 </style>

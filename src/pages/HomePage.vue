@@ -1,32 +1,34 @@
 <template>
-  <div class="row m-0 d-flex">
-    <div class="col-3">
-      <center>
+  <center>
+    <div class="row m-0">
+      <div class="col-2">
         <Navbar />
-      </center>
-    </div>
-    <div class="col-10 me-3" align="right">
-      <button
-        class="btn btn-primary text-light"
-        data-bs-toggle="modal"
-        data.bs.target="PostForm"
-      >
-        Create Post
-        <Modal id="PostForm">
-          <template #modal-title> GREETER</template>
-          <template #modal-body><PostForm /> </template>
-        </Modal>
-      </button>
-      <Search />
-      <div class="card col-10 mt-3 elevation-2">
-        <div class="card-body">
-          <!-- <div v-for="p in posts" :key="p.id">
-            <Posts :posts="p" />
-          </div> -->
+      </div>
+      <div class="col-8 justify-content-center">
+        <div align="right">
+          <button
+            class="btn btn-primary text-light"
+            data-bs-toggle="modal"
+            data.bs.target="PostForm"
+            align="right"
+          >
+            Create Post
+            <Modal id="PostForm">
+              <template #modal-title> GREETER</template>
+              <template #modal-body><PostForm /> </template>
+            </Modal>
+          </button>
+        </div>
+        <Search />
+        <div v-for="p in posts" :key="p.id">
+          <Posts :post="p" />
         </div>
       </div>
     </div>
-  </div>
+    <div class="col-2">
+      <SubliminalMessage />
+    </div>
+  </center>
 </template>
 
 <script>
