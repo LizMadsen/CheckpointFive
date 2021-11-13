@@ -1,35 +1,7 @@
 <template>
-  <div>
-    <button
-      class="btn btn-primary"
-      data-bs-toggle="modal"
-      data.bs.target="PostForm"
-    ></button>
-    <Modal id="PostForm">
-      <template #modal-title> GREETER</template>
-      <template #modal-body><BlogForm /> </template>
-    </Modal>
-  </div>
-  <div>
-    <Search />
-  </div>
   <center>
-    <div
-      class="
-        row
-        home
-        flex-grow-1
-        d-flex
-        flex-column
-        align-items-center
-        m-0
-        container-fluid
-        pt-4
-      "
-    >
-      <div v-for="p in post" :key="p.id">
-        <Blog :post="p" />
-      </div>
+    <div v-for="p in post" :key="p.id">
+      <Posts :posts="p" />
     </div>
   </center>
 </template>
@@ -52,6 +24,7 @@ export default {
     });
     return {
       posts: computed(() => AppState.posts),
+      name: "Home",
     };
   },
 };

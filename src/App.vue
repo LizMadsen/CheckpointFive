@@ -1,11 +1,25 @@
 <template>
   <main>
-    <div class="row m-0">
+    <div class="row m-0 d-flex">
       <div class="col-2">
         <Navbar />
       </div>
-      <div class="col-8 mt-5">
-        <Posts />
+      <div class="col-10 mt-2">
+        <div class="justify-items-right me-3" align="right">
+          <button
+            class="btn btn-primary text-light"
+            data-bs-toggle="modal"
+            data.bs.target="PostForm"
+          >
+            Create Post
+            <Modal id="PostForm">
+              <template #modal-title> GREETER</template>
+              <template #modal-body><BlogForm /> </template>
+            </Modal>
+          </button>
+        </div>
+        <Search />
+        <Posts class="mt-3" />
       </div>
     </div>
   </main>
@@ -19,7 +33,7 @@ export default {
   name: "App",
   setup() {
     return {
-      appState: computed(() => AppState),
+      AppState: computed(() => AppState),
     };
   },
 };

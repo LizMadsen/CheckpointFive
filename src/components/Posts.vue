@@ -1,17 +1,22 @@
 <template>
-  <div class="col-8 card">
-    <div class="card-body rounded elevation-2">
-      <p>
-        {{ post.title }}
-      </p>
-      <p>
-        {{ post.body }}
-      </p>
-      <p>
-        <img class="imgFit" :src="post.imgUrl" alt="Blog post picture" />
-      </p>
+  <center>
+    <div class="col-10 card">
+      <div class="card-body rounded elevation-2">
+        <!-- <p>
+          {{ posts.creator.picture }}
+        </p> -->
+        <!-- <p>
+          {{ posts.title }}
+        </p> -->
+        <!-- <p>
+          {{ posts.body }}
+        </p> -->
+        <!-- <p>
+          <img class="imgFit" :src="post.imgUrl" alt="post picture" />
+        </p> -->
+      </div>
     </div>
-  </div>
+  </center>
 </template>
 
 
@@ -19,6 +24,7 @@
 import { logger } from "../utils/Logger";
 import Pop from "../utils/Pop";
 export default {
+  name: "Home",
   props: { post: { type: Object, required: true } },
   setup() {
     return {
