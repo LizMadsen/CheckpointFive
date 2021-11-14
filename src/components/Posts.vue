@@ -3,12 +3,13 @@
     <div class="card-body">
       <p>
         <img
-          class="profilePic"
+          class="profilePic mx-2"
           :src="post.creator.picture"
           alt="post picture"
           align="left"
         />
       </p>
+      <div align="left">{{ post.creator.name }}</div>
       <p>
         {{ post.body }}
       </p>

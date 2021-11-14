@@ -1,25 +1,15 @@
 <template>
-  <div class="row m-0 d-flex">
-    <div class="col-3 bg-primary vh-100">//INSERT PROFILE STUFF HERE</div>
-    <div class="col-8 about text-center">
-      <h1>Welcome {{ account.name }}</h1>
-      <img class="rounded" :src="account.picture" alt="" />
-      <p>{{ account.email }}</p>
-    </div>
-    <div class="col-1">
-      <router-link :to="{ name: 'Home' }">
-        <button class="m-3 text-light bg-primary rounded">Home</button>
-      </router-link>
-      <!-- <SubliminalMessage /> -->
-    </div>
-  </div>
+  <Account :account="account" />
 </template>
 
 <script>
 import { computed } from "vue";
 import { AppState } from "../AppState";
+import Pop from "../utils/Pop";
+import { logger } from "../utils/Logger";
+import { accountService } from "../services/AccountService";
+import { subliminalMessageService } from "../services/SubliminalMessageService";
 export default {
-  name: "Account",
   setup() {
     return {
       account: computed(() => AppState.account),
