@@ -23,7 +23,6 @@
 <script>
 import { logger } from "../utils/Logger";
 import Pop from "../utils/Pop";
-import { AppState } from "../AppState";
 export default {
   name: "Home",
   props: { post: { type: Object, required: true } },

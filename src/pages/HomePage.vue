@@ -4,7 +4,7 @@
       <div class="col-2">
         <Navbar />
       </div>
-      <div class="col-8 justify-content-center">
+      <div class="col-7 justify-content-center">
         <div align="right">
           <button
             class="btn btn-primary text-light"
@@ -24,9 +24,9 @@
           <Posts :post="p" />
         </div>
       </div>
-    </div>
-    <div class="col-2">
-      <SubliminalMessage />
+      <div class="col-3">
+        <SubliminalMessage :subMessage="sm" />
+      </div>
     </div>
   </center>
 </template>
@@ -37,11 +37,13 @@ import { logger } from "../utils/Logger";
 import Pop from "../utils/Pop";
 import { AppState } from "../AppState";
 import { postsService } from "../services/PostsService";
+import { subliminalMessageService } from "../services/SubliminalMessageService";
 export default {
   setup() {
     onMounted(async () => {
       try {
         await postsService.getAll();
+        await subliminalMessageService.getAll();
       } catch (error) {
         logger.error(error);
         Pop.toast(error.message, "This is an error!");
@@ -49,6 +51,7 @@ export default {
     });
     return {
       posts: computed(() => AppState.posts),
+      sm: computed(() => AppState.subMessage),
       name: "Home",
     };
   },

@@ -1,5 +1,9 @@
 <template>
-  <div class="subliminalMessage"></div>
+  <img
+    class="subMessFit"
+    :src="subMessage.tall"
+    alt="sublimninal message picture"
+  />
 </template>
 
 
@@ -7,6 +11,7 @@
 import { logger } from "../utils/Logger";
 import Pop from "../utils/Pop";
 export default {
+  props: { subMessage: { type: Object, required: true } },
   setup() {
     return {
       async getOne() {
@@ -24,4 +29,7 @@ export default {
 
 
 <style lang="scss" scoped>
+.subMessFit {
+  object-fit: cover;
+}
 </style>

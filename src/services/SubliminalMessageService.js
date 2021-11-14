@@ -1,6 +1,6 @@
-const { AppState } = require("../AppState");
-const { logger } = require("../utils/Logger");
-const { cpFiveApi } = require("./AxiosService");
+import { AppState } from "../AppState";
+import { logger } from "../utils/Logger";
+import { cpFiveApi } from "./AxiosService";
 
 
 class SubliminalMessageService {
@@ -8,6 +8,7 @@ class SubliminalMessageService {
     const res = await cpFiveApi.get('api/ads')
     logger.log(res.data) 
     AppState.subMessage = res.data[0]
+    logger.log(AppState.subMessage)
   }
 }
 

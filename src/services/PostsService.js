@@ -5,7 +5,6 @@ import { AppState } from "../AppState"
 class PostsService {
   async getAll() {
     const res = await cpFiveApi.get('api/posts')
-    // logger.log(res.data)
     AppState.posts = res.data.posts
     logger.log(AppState.posts)
   }
