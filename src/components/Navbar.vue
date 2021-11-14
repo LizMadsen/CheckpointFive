@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-primary px-3 h-100">
+  <nav class="navBar bg-primary px-3 h-100">
     <router-link :to="{ name: 'Home' }">
       <img
         class="img-fluid"
@@ -88,6 +88,9 @@ export default {
 </script>
 
 <style scoped>
+.navBar {
+  position: fixed;
+}
 .dropdown-menu {
   user-select: none;
   display: block;

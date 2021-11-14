@@ -59,9 +59,14 @@ export default {
 .profilePic {
   border-radius: 50%;
   height: 4rem;
+  width: 4rem;
+  object-fit: cover;
 }
 
 .imgFit {
   width: 25rem;
 }
+// .card {
+//   width: auto;
+// }
 </style>

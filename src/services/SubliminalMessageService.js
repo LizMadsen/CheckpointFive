@@ -7,7 +7,7 @@ class SubliminalMessageService {
   async getAll(){
     const res = await cpFiveApi.get('api/ads')
     logger.log(res.data) 
-    AppState.subMessage = res.data[0]
+    AppState.subMessage = res.data
     logger.log(AppState.subMessage)
   }
 }

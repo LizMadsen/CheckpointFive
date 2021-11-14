@@ -5,7 +5,7 @@
         <Navbar />
       </div>
       <div class="col-7 justify-content-center">
-        <SubMessBanner :subMessage="sm" class="my-3" />
+        <SubMessBanner :subMessage="sm[0]" class="my-3" />
         <div align="right">
           <button
             class="btn btn-primary text-light"
@@ -30,8 +30,8 @@
           <Posts :post="p" />
         </div>
       </div>
-      <div class="col-3 mt-3">
-        <SubMessTall :subMessage="sm" />
+      <div class="col-3 mt-5">
+        <SubMessTall :subMessage="sm[1]" />
       </div>
     </div>
   </center>
