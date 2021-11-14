@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-primary px-3 vh-100">
+  <nav class="bg-primary px-3 h-100">
     <router-link :to="{ name: 'Home' }">
       <img
         class="img-fluid"

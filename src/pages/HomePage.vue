@@ -24,7 +24,7 @@
           <Posts :post="p" />
         </div>
       </div>
-      <div class="col-3">
+      <div class="col-3 mt-5">
         <SubliminalMessage :subMessage="sm" />
       </div>
     </div>

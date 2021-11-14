@@ -30,6 +30,6 @@ export default {
 
 <style lang="scss" scoped>
 .subMessFit {
-  object-fit: cover;
+  max-width: 100%;
 }
 </style>
