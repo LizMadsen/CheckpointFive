@@ -5,10 +5,6 @@
 <script>
 import { computed } from "vue";
 import { AppState } from "../AppState";
-import Pop from "../utils/Pop";
-import { logger } from "../utils/Logger";
-import { accountService } from "../services/AccountService";
-import { subliminalMessageService } from "../services/SubliminalMessageService";
 export default {
   setup() {
     return {

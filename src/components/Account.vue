@@ -1,17 +1,28 @@
 <template>
   <div class="row m-0 d-flex">
-    <div class="col-3 bg-primary vh-100">
-      <!-- <img
-        class="profilePic"
-        :src="account.coverImg.default"
-        alt="Profile Pic"
-      /> -->
-    </div>
+    <div class="col-3 bg-primary vh-100"></div>
     <div class="col-8 about text-center">
-      <h1>Welcome {{ account.name }}</h1>
-      <img class="rounded" :src="account.picture" alt="" />
-      <p>{{ account.email }}</p>
-      <p>UPDATE ACCOUNT INFORMATION HERE</p>
+      <div class="coverImg">
+        <h1>Welcome {{ account.name }}</h1>
+        <img class="rounded" :src="account.picture" alt="" />
+        <p>{{ account.email }}</p>
+        <p>UPDATE ACCOUNT INFORMATION HERE</p>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h4>Make A New Post</h4>
+          <input
+            class="form-control mt-3"
+            placeholder="Post Title"
+            type="text"
+          />
+          <textarea
+            class="form-control mt-3"
+            placeholder="Post Body"
+            type="text"
+          />
+        </div>
+      </div>
     </div>
     <div class="col-1">
       <router-link :to="{ name: 'Home' }">

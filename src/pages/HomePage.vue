@@ -20,6 +20,11 @@
           </button>
         </div>
         <Search />
+        <button class="btn mx-5 mt-3 text-light btn-primary rounded">
+          Prev Page</button
+        ><button class="btn mx-5 mt-3 text-light btn-primary rounded">
+          Next Page
+        </button>
         <div v-for="p in posts" :key="p.id">
           <Posts :post="p" />
         </div>

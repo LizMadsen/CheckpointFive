@@ -9,7 +9,9 @@
           align="left"
         />
       </p>
-      <div align="left">{{ post.creator.name }}</div>
+      <div align="left">
+        {{ post.creator.name }}<br />{{ post.creator.createdAt }}
+      </div>
       <p>
         {{ post.body }}
       </p>
@@ -28,11 +30,11 @@ export default {
   name: "Home",
   props: { post: { type: Object, required: true } },
 
-  // computed: {
-  //   hasImg() {
-  //     return post.HasOwnProperty("imgUrl");
-  //   },
-  // },
+  computed: {
+    hasImg() {
+      return post.HasOwnProperty("imgUrl");
+    },
+  },
 
   setup() {
     return {

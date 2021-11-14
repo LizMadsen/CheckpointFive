@@ -14,6 +14,11 @@ class PostsService {
     logger.log(res.data)
     AppState.posts = res.data.posts
   }
+  async remove(){
+    const res = await cpFiveApi.delete('api/posts' + AppState)
+    logger.log(res.data)
+    AppState.posts = res.data.posts
+  }
 }
 
 export const postsService = new PostsService()
