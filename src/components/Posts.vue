@@ -18,6 +18,9 @@
       <p>
         <img class="imgFit" :src="post.imgUrl" alt="post picture" />
       </p>
+      <p>
+        <Likes />
+      </p>
     </div>
   </div>
 </template>
