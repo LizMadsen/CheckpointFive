@@ -24,7 +24,9 @@
         />
       </p>
       <p>
-        <i class="mdi mdi-heart-multiple-outline">{{ post.likes.length }}</i>
+        <i class="btn text-info mdi mdi-heart-multiple-outline">{{
+          post.likes.length
+        }}</i>
       </p>
     </div>
   </div>
