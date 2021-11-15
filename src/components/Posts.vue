@@ -19,7 +19,7 @@
         <img class="imgFit" :src="post.imgUrl" alt="post picture" />
       </p>
       <p>
-        <Likes />
+        <i class="mdi mdi-heart-multiple-outline">{{ post.likes.length }}</i>
       </p>
     </div>
   </div>

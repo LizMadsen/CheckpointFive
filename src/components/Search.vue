@@ -10,7 +10,9 @@
           name=""
           id=""
         />
-        <button class="btn btn-outline-primary" type="submit">Search</button>
+        <router-link :to="{ name: 'Search' }">
+          <button class="btn btn-outline-primary" type="submit">Search</button>
+        </router-link>
       </form>
       <div class="mt-2" v-if="pages > 0">
         <button

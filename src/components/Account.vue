@@ -30,6 +30,9 @@
       </router-link>
     </div>
   </div>
+  <div class="row m-0">
+    <SubMessBanner :subMessage="smb" class="my-3" />
+  </div>
 </template>
 
 
@@ -37,6 +40,7 @@
 import { accountService } from "../services/AccountService";
 import { logger } from "../utils/Logger";
 import Pop from "../utils/Pop";
+import { subliminalMessageService } from "../services/SubliminalMessageService";
 export default {
   name: "Account",
   props: { account: { type: Object, required: true } },
