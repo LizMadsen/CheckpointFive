@@ -6,9 +6,10 @@ import { cpFiveApi } from "./AxiosService";
 class SubliminalMessageService {
   async getAll(){
     const res = await cpFiveApi.get('api/ads')
-    logger.log(res.data) 
-    AppState.subMessage = res.data
-    logger.log(AppState.subMessage)
+    // logger.log(res.data) 
+    AppState.subMessageBanner = res.data[0]
+    AppState.subMessageTall = res.data[1]
+    // logger.log(AppState.subMessage)
   }
 }
 

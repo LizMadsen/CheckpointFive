@@ -18,7 +18,7 @@ export default {
         try {
           await subliminalMessageService.getAll();
         } catch (error) {
-          logger.log(error);
+          // logger.log(error);
           Pop.toast(error.message, "Error, man");
         }
       },

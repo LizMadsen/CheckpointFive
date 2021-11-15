@@ -5,7 +5,8 @@ export const AppState = reactive({
   user: {},
   account: {},
   posts: [],
-  subMessage: [],
+  subMessageBanner: {},
+  subMessageTall: {},
   pages: {},
   currentPage: {}
 })

@@ -7,7 +7,7 @@ class AccountService {
     try {
       const res = await cpFiveApi.get('account')
       AppState.account = res.data
-      logger.log(AppState.account)
+      // logger.log(AppState.account)
     } catch (err) {
       logger.error('HAVE YOU STARTED YOUR SERVER YET???', err)
     }

@@ -5,7 +5,7 @@
         <Navbar />
       </div>
       <div class="col-7 justify-content-center">
-        <SubMessBanner :subMessage="sm[0]" class="my-3" />
+        <SubMessBanner :subMessage="smb" class="my-3" />
         <div align="right">
           <button
             class="btn btn-primary text-light"
@@ -14,10 +14,10 @@
             align="right"
           >
             Create Post
-            <Modal id="PostForm">
+            <!-- <Modal id="PostForm">
               <template #modal-title> GREETER</template>
               <template #modal-body><PostForm /> </template>
-            </Modal>
+            </Modal> -->
           </button>
         </div>
         <Search />
@@ -30,8 +30,8 @@
           <Posts :post="p" />
         </div>
       </div>
-      <div class="col-3 mt-5">
-        <SubMessTall :subMessage="sm[1]" />
+      <div class="smt col-3 mt-5">
+        <SubMessTall :subMessage="smt" />
       </div>
     </div>
   </center>
@@ -51,13 +51,14 @@ export default {
         await postsService.getAll();
         await subliminalMessageService.getAll();
       } catch (error) {
-        logger.error(error);
+        // logger.error(error);
         Pop.toast(error.message, "This is an error!");
       }
     });
     return {
       posts: computed(() => AppState.posts),
-      sm: computed(() => AppState.subMessage),
+      smt: computed(() => AppState.subMessageTall),
+      smb: computed(() => AppState.subMessageBanner),
       name: "Home",
     };
   },
