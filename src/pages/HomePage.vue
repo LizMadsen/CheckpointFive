@@ -10,14 +10,10 @@
           <button
             class="btn btn-primary text-light"
             data-bs-toggle="modal"
-            data.bs.target="PostForm"
+            data.bs.target="#post-modal"
             align="right"
           >
             Create Post
-            <!-- <Modal id="PostForm">
-              <template #modal-title> GREETER</template>
-              <template #modal-body><PostForm /> </template>
-            </Modal> -->
           </button>
         </div>
         <Search />
@@ -35,6 +31,7 @@
       </div>
     </div>
   </center>
+  <PostForm />
 </template>
 
 <script>

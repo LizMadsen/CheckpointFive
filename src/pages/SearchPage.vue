@@ -1,5 +1,8 @@
 <template>
   <div class="searchPage container-fluid">
+    <router-link :to="{ name: 'Home' }">
+      <button class="m-3 text-light bg-primary rounded">Home</button>
+    </router-link>
     <div class="row m-0">
       <div class="col-2">
         <Navbar />

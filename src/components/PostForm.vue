@@ -1,6 +1,6 @@
 <template>
-  <Modal id="PostForm">
-    <template #modal-title class="bg-primary">
+  <Modal id="post-modal">
+    <template #modal-title>
       <h4>Make A New Post</h4>
     </template>
     <template #modal-body>
@@ -13,7 +13,6 @@
               class="form-control"
               name="title"
               id="title"
-              aria-describedby="title"
               placeholder="Title"
               required
               v-model="editable.title"
@@ -26,7 +25,6 @@
               class="form-control"
               name="body"
               id="body"
-              aria-describedby="body"
               placeholder="Body"
               min="10"
               max="5000"
@@ -42,7 +40,6 @@
               class="form-control"
               name="image"
               id="image"
-              aria-describedby="image"
               placeholder="Image"
               required
               v-model="editable.image"
@@ -88,17 +85,14 @@ export default {
       editable,
       async handleSubmit() {
         try {
-          if (editable.value.id) {
-            await postsService.edit(editable.value);
-          } else {
-            await postsService.create(editable.value);
-          }
+          // await postsService.create(editable.value);
           // if successful close modal
-          Modal.getOrCreateInstance(document.getElementById("PostForm")).hide();
-          router.push({
-            name: "Home",
-          });
-          // change route to car details for this new car
+          // Modal.getOrCreateInstance(
+          //   document.getElementById("post-modal")
+          // ).show();
+          // router.push({
+          //   name: "Home",
+          // });
         } catch (error) {
           logger.error(error);
           Pop.toast("Failed to Create", "error");
