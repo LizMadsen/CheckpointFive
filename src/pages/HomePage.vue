@@ -10,13 +10,14 @@
           <button
             class="btn btn-primary text-light"
             data-bs-toggle="modal"
-            data.bs.target="#post-modal"
-            align="right"
+            data-bs-target="#post-modal"
           >
             Create Post
           </button>
         </div>
-        <Search />
+        <div class="col-8">
+          <Search />
+        </div>
         <button class="btn mx-5 mt-3 text-light btn-primary rounded">
           Prev Page</button
         ><button class="btn mx-5 mt-3 text-light btn-primary rounded">

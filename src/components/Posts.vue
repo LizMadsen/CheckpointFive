@@ -16,7 +16,12 @@
         {{ post.body }}
       </p>
       <p>
-        <img class="imgFit" :src="post.imgUrl" alt="post picture" />
+        <img
+          class="imgFit"
+          :src="post.imgUrl"
+          alt="post picture"
+          v-if="post.imgUrl"
+        />
       </p>
       <p>
         <i class="mdi mdi-heart-multiple-outline">{{ post.likes.length }}</i>

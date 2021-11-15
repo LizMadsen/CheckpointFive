@@ -1,6 +1,8 @@
 <template>
   <div class="row m-0 d-flex">
-    <div class="col-3 bg-primary vh-100"></div>
+    <div class="col-2">
+      <Navbar />
+    </div>
     <div class="col-8 about text-center">
       <div class="coverImg">
         <h1>Welcome {{ account.name }}</h1>

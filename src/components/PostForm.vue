@@ -5,19 +5,7 @@
     </template>
     <template #modal-body>
       <form @submit.prevent="handleSubmit">
-        <div class="d-flex justify-content-between">
-          <div>
-            <label for="title" class="form-label"> Title</label>
-            <input
-              type="text"
-              class="form-control"
-              name="title"
-              id="title"
-              placeholder="Title"
-              required
-              v-model="editable.title"
-            />
-          </div>
+        <div class="justify-content-around">
           <div>
             <label for="body" class="form-label"> Body</label>
             <textarea
@@ -29,7 +17,7 @@
               min="10"
               max="5000"
               required
-              v-model="editable.body"
+              v-model="post.body"
             >
             </textarea>
           </div>
@@ -42,15 +30,19 @@
               id="image"
               placeholder="Image"
               required
-              v-model="editable.image"
+              v-model="post.imgUrl"
             />
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-info" data-bs-dismiss="modal">
+          <button
+            type="button"
+            class="btn btn-secondary text-light"
+            data-bs-dismiss="modal"
+          >
             Close
           </button>
-          <button type="submit" class="btn btn primary">Submit</button>
+          <button type="submit" class="btn btn-success">Submit</button>
         </div>
       </form>
     </template>
@@ -69,30 +61,30 @@ import { Modal } from "bootstrap";
 import { NewPost } from "../Models/NewPost";
 
 export default {
-  props: {
-    newPost: {
-      default: () => new NewPost(),
-    },
-  },
-  setup(props) {
+  // props: {
+  //   newPost: {
+  //     default: () => new NewPost(),
+  //   },
+  // },
+  setup() {
     const router = useRouter();
-    const editable = ref({});
+    const post = ref({});
 
-    watchEffect(() => {
-      editable.value = { ...props.newPost };
-    });
+    // watchEffect(() => {
+    //   editable.value = { ...props.newPost };
+    // });
     return {
-      editable,
+      post,
       async handleSubmit() {
         try {
-          // await postsService.create(editable.value);
-          // if successful close modal
-          // Modal.getOrCreateInstance(
-          //   document.getElementById("post-modal")
-          // ).show();
-          // router.push({
-          //   name: "Home",
-          // });
+          logger.log(post.value);
+          await postsService.create(post.value);
+          Modal.getOrCreateInstance(
+            document.getElementById("post-modal")
+          ).show();
+          router.push({
+            name: "Home",
+          });
         } catch (error) {
           logger.error(error);
           Pop.toast("Failed to Create", "error");
